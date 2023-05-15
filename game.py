@@ -1,32 +1,32 @@
-from Models.calcular import Calcular
+from Models.calculate import Calculate
 
 
 def main() -> None:
-    pontos: int = 0
-    jogar(pontos)
+    points: int = 0
+    play(points)
 
 
-def jogar(pontos: int) -> None:
-    dificuldade: int = int(input('Informe o nível de dificuldade desejado [1, 2, 3 ou 4]: '))
+def play(points: int) -> None:
+    difficulty: int = int(input('Enter the desired difficulty level [1, 2, 3 ou 4]: '))
 
-    calc: Calcular = Calcular(dificuldade)
+    calc: Calculate = Calculate(difficulty)
 
-    print('Informe o resultado para a seguinte operação: ')
-    calc.mostrar_operacao()
+    print('Report the result for the following operation: ')
+    calc.show_operation()
 
-    resultado: int = int(input())
+    result: int = int(input())
 
-    if calc.checar_resultado(resultado):
-        pontos += 1
-        print(f'Você tem {pontos} pontos(s).')
+    if calc.check_result(result):
+        points += 1
+        print(f'You have {points} point(s).')
 
-    continuar: int = int(input('Deseja continuar no jogo? [1 - SIM, 2 - Não] '))
+    keep: int = int(input('Do you want to continue in the game? [1 - Yes, 2 - No] '))
 
-    if continuar == 1:
-        jogar(pontos)
+    if keep == 1:
+        play(points)
     else:
-        print(f'Você finalizou com {pontos} pontos(s).')
-        print(f'Até a próxima.')
+        print(f'You ended up with {points} point(s).')
+        print(f'Until next time!')
 
 
 if __name__ == '__main__':
